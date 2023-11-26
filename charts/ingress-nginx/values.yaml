@@ -194,7 +194,7 @@ controller:
   #         name: secret-resource
 
   # -- Use a `DaemonSet` or `Deployment`
-  kind: Deployment
+  kind: DaemonSet
   # -- Annotations to be added to the controller Deployment or DaemonSet
   ##
   annotations: {}
@@ -461,7 +461,8 @@ controller:
     # -- List of IP addresses at which the controller services are available
     ## Ref: https://kubernetes.io/docs/concepts/services-networking/service/#external-ips
     ##
-    externalIPs: []
+    externalIPs:
+      - 192.168.3.111
     # -- Set to false to disable loadbalancer node port allocation
     # See https://kubernetes.io/docs/concepts/services-networking/service/#load-balancer-nodeport-allocation
     # allocateLoadBalancerNodePorts: true
