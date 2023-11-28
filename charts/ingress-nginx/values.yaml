@@ -302,17 +302,17 @@ controller:
   ## Liveness and readiness probe values
   ## Ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   ##
-  ## startupProbe:
-  ##   httpGet:
-  ##     # should match container.healthCheckPath
-  ##     path: "/healthz"
-  ##     port: 10254
-  ##     scheme: HTTP
-  ##   initialDelaySeconds: 5
-  ##   periodSeconds: 5
-  ##   timeoutSeconds: 2
-  ##   successThreshold: 1
-  ##   failureThreshold: 5
+  startupProbe:
+    httpGet:
+      # should match container.healthCheckPath
+      path: "/healthz"
+      port: 10254
+      scheme: HTTP
+    initialDelaySeconds: 5
+    periodSeconds: 5
+    timeoutSeconds: 2
+    successThreshold: 1
+    failureThreshold: 5
   livenessProbe:
     httpGet:
       # should match container.healthCheckPath
